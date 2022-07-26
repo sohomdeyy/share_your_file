@@ -45,7 +45,7 @@ async function handleDownload(req,res) {
     }
     file.downloadcount++;
     await file.save();
-    //const filepath=`${__dirname}/../${file.path}`
+    const filepath=`${__dirname}/./${file.path}`
     res.download(file.path,file.originalname);
 }
-app.listen(process.env.PORT);
+app.listen(process.env.PORT||3000);
