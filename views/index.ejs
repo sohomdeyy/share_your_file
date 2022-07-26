@@ -8,7 +8,7 @@
   </head>
   <body style="background-color: aquamarine">
     <% if(locals.fileLink!=null){ %>
-    <div>
+    <div style="font-size: 40px; text-align: center">
       your file is uploaded
       <a href="<%=locals.fileLink%>"><%=locals.fileLink%></a>
     </div>
@@ -22,20 +22,35 @@
         grid-template-columns: auto 2fr;
         max-width: 500px;
         margin: 0 auto;
+        padding: 40px;
+        font-size: 40px;
       "
       enctype="multipart/form-data"
     >
       <label for="file">File:</label>
-      <input type="file" name="file" id="file" required />
+      <input
+        type="file"
+        name="file"
+        id="file"
+        style="border-radius: 10px; font-size: 30px"
+        required
+      />
 
-      <label for="password">password</label>
-      <input type="password" name="password" id="password" />
+      <label for="password" style="margin-top: 30px">password</label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        style="border-radius: 10px; font-size: 30px; margin-top: 30px"
+      />
 
       <button
         style="
           grid-column: span 2;
           background-color: bisque;
           border-radius: 10px;
+          font-size: 30px;
+          margin-top: 30px;
         "
         type="submit"
       >
