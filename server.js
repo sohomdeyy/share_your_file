@@ -1,7 +1,7 @@
 const express=require("express");
 const multer=require("multer");
 const mongoose=require("mongoose")
-const dotenv=require("dotenv");
+const dotenv=require('dotenv');
 const bcrypt=require('bcrypt');
 const File=require("./models/file");
 dotenv.config(); 
