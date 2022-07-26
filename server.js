@@ -29,7 +29,7 @@ app.post("/upload",upload.single("file"),async (req,res)=>{
         filedata.password=await bcrypt.hash(req.body.password,10)
     }
     const file=await File.create(filedata);
-    res.render('index',{fileLink:`${process.env.APP_BASE_URL}/file/${file.id}`})
+    res.render('index',{fileLink:`${process.env.APP_BASE_URL}file/${file.id}`})
 })
 async function handleDownload(req,res) {
     const file=await File.findById(req.params.id);
@@ -46,6 +46,6 @@ async function handleDownload(req,res) {
     file.downloadcount++;
     await file.save();
     const filepath=`${__dirname}/./${file.path}`
-    res.download(file.path,file.originalname);
+    res.download(filepath,file.originalname);
 }
 app.listen(process.env.PORT||3000);
